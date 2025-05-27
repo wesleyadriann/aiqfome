@@ -1,11 +1,12 @@
-import { FC } from "react";
+import React, { FC } from "react";
+
 import Image from "next/image";
 
 interface IHeaderProps {
   withSearch?: boolean;
 }
 
-export const Header: FC<IHeaderProps> = () => {
+const Component: FC<IHeaderProps> = () => {
   return (
     <header className="bg-(--primary) p-[16px]">
       <div className="flex items-center">
@@ -17,9 +18,15 @@ export const Header: FC<IHeaderProps> = () => {
           width={32}
         />
         <div className="flex flex-1 gap-[10px]">
-          <Image alt="Ícone Pin" height={24} src="/assets/pin.svg" width={24} />
+          {/* <Image
+            alt="Ícone Pin"
+            height={24}
+            src="/assets/icons/pin.svg"
+            width={24}
+          /> */}
+
           <div className="font-bold text-white">
-            <p className="text-[14px] text-(--purple-light)">entregando em</p>
+            <p className="text-sm text-(--purple-light)">entregando em</p>
             <p>Rua Mandaguari, 198</p>
           </div>
         </div>
@@ -27,7 +34,7 @@ export const Header: FC<IHeaderProps> = () => {
           alt="Ícone de Usuário"
           className="cursor-pointer"
           height={24}
-          src="/assets/person.svg"
+          src="/assets/icons/person.svg"
           width={24}
         />
       </div>
@@ -46,7 +53,7 @@ export const Header: FC<IHeaderProps> = () => {
         <Image
           alt="Ícone de Busca"
           height={24}
-          src="/assets/search.svg"
+          src="/assets/icons/search.svg"
           width={24}
         />
         <input
@@ -57,3 +64,5 @@ export const Header: FC<IHeaderProps> = () => {
     </header>
   );
 };
+
+export const Header = React.memo(Component);

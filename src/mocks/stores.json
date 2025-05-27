@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "name": "Matsuri Concept",
+    "rating": 4.7,
+    "delivery_value": 0,
+    "open": true,
+    "image": "/stores/matsuri-concept.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Subway - Avenida center",
+    "rating": 4.3,
+    "delivery_value": 600,
+    "open": true,
+    "image": "/stores/subway.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Burger King - Colombo",
+    "rating": 4.5,
+    "delivery_value": 1200,
+    "open": true
+  },
+  {
+    "id": 4,
+    "name": "McDonald’s - Novo Centro",
+    "rating": 4.4,
+    "delivery_value": 750,
+    "open": true
+  },
+  {
+    "id": 5,
+    "name": "Pizza Hut - Centro",
+    "rating": 4.6,
+    "delivery_value": 900,
+    "open": false
+  },
+  {
+    "id": 6,
+    "name": "Giraffas - Shopping",
+    "rating": 4.2,
+    "delivery_value": 500,
+    "open": true
+  },
+  {
+    "id": 7,
+    "name": "Domino’s Pizza",
+    "rating": 4.5,
+    "delivery_value": 800,
+    "open": false
+  },
+  {
+    "id": 8,
+    "name": "Habib’s - Centro",
+    "rating": 4.1,
+    "delivery_value": 400,
+    "open": true
+  },
+  {
+    "id": 9,
+    "name": "Outback Steakhouse",
+    "rating": 4.8,
+    "delivery_value": 1500,
+    "open": true
+  },
+  {
+    "id": 10,
+    "name": "China In Box",
+    "rating": 4.0,
+    "delivery_value": 700,
+    "open": false
+  },
+  {
+    "id": 11,
+    "name": "KFC - Shopping",
+    "rating": 4.3,
+    "delivery_value": 650,
+    "open": true
+  },
+  {
+    "id": 12,
+    "name": "Bob’s - Centro",
+    "rating": 4.2,
+    "delivery_value": 550,
+    "open": false
+  }
+]
