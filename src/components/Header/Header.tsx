@@ -8,7 +8,7 @@ interface IHeaderProps {
 
 const Component: FC<IHeaderProps> = () => {
   return (
-    <header className="bg-(--primary) p-[16px]">
+    <header className="bg-(--purple-500) p-[16px]">
       <div className="flex items-center">
         <Image
           alt="Logo aiqfome"
@@ -26,7 +26,7 @@ const Component: FC<IHeaderProps> = () => {
           /> */}
 
           <div className="font-bold text-white">
-            <p className="text-sm text-(--purple-light)">entregando em</p>
+            <p className="text-sm text-(--purple-200)">entregando em</p>
             <p>Rua Mandaguari, 198</p>
           </div>
         </div>

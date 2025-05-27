@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Header } from "~/components/Header";
-
+import { Footer } from "~/components/Footer";
 import { StoreCard } from "~/components/StoreCard";
 import { getStores } from "~/services/stores";
 
@@ -41,19 +41,20 @@ export default async function Home() {
         />
 
         <section className="flex flex-col gap-[16px] p-[16px]">
-          <p className="font-extrabold text-(--primary) text-xl">abertos</p>
+          <p className="font-extrabold text-(--purple-500) text-xl">abertos</p>
 
           {stores.opened.map((store) => (
             <StoreCard key={store.id} />
           ))}
         </section>
         <section className="flex flex-col gap-[16px] p-[16px]">
-          <p className="font-extrabold text-(--primary) text-xl">fechados</p>
+          <p className="font-extrabold text-(--purple-500) text-xl">fechados</p>
           {stores.closed.map((store) => (
             <StoreCard key={store.id} />
           ))}
         </section>
       </main>
+      <Footer />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+
 import Image from "next/image";
 
 const Component = () => {
@@ -6,7 +7,7 @@ const Component = () => {
     <div
       className="
       items-center
-      bg-(--containers)
+      bg-(--neutrals-50)
       flex
       gap-[12px]
       overflow-hidden
@@ -27,7 +28,7 @@ const Component = () => {
             src="/assets/icons/delivery.svg"
             width={24}
           />
-          <span className="text-(--primary)">R$6,00</span>
+          <span className="text-(--purple-500)">R$6,00</span>
           <span className="text-xs text-(--dividers-gray)">•</span>
           <Image
             alt="Ícone avaliação"
@@ -35,7 +36,7 @@ const Component = () => {
             src="/assets/icons/rating.svg"
             width={24}
           />
-          <span className="text-(--text-secondary)">4.7</span>
+          <span className="text-(--neutrals-500)">4.7</span>
         </div>
       </div>
     </div>
