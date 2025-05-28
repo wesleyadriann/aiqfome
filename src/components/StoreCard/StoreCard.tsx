@@ -3,6 +3,7 @@ import React, { FC, useMemo } from "react";
 import Image from "next/image";
 
 import { IStoreCardProps } from "./types";
+import { DeliveryBiker, DeliveryHelmet, Rating } from "~/assets/icons";
 
 const Component: FC<IStoreCardProps> = (props) => {
   const { delivery_value, image, name, open, rating } = props;
@@ -41,26 +42,20 @@ const Component: FC<IStoreCardProps> = (props) => {
       <div className="font-bold">
         <p className="font-(--text-medium)">{name}</p>
         <div className="flex items-center gap-[4px] text-sm ">
-          <Image
-            alt="Ícone preço de entrega"
-            height={24}
-            src={`/assets/icons/${
-              deliveryIsFree ? "delivery_biker" : "delivery_helmet"
-            }.svg`}
-            width={24}
-          />
           {deliveryIsFree ? (
-            <span className="text-(--teal-600)">grátis</span>
+            <>
+              <DeliveryBiker height={24} width={24} />
+              <span className="text-(--teal-600)">grátis</span>
+            </>
           ) : (
-            <span className="text-(--brand)">{deliveryValue}</span>
+            <>
+              <DeliveryHelmet height={24} width={24} />
+              <span className="text-(--brand)">{deliveryValue}</span>
+            </>
           )}
+
           <span className="text-xs text-(--dividers-gray)">•</span>
-          <Image
-            alt="Ícone avaliação"
-            height={24}
-            src="/assets/icons/rating.svg"
-            width={24}
-          />
+          <Rating height={24} width={24} />
           <span className="text-(--neutrals-500)">{rating.toFixed(1)}</span>
         </div>
       </div>

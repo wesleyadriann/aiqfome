@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Header } from "~/components/Header";
 import { getStoreById } from "~/services/stores";
+import { ChevronRight, Favorite, Share } from "~/assets/icons";
 
 type IStoreProps = {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -19,13 +20,13 @@ const fetchStore = async (id: number) => {
 };
 
 export default async function Store({ searchParams }: IStoreProps) {
-  const storeData = await fetchStore(Number(searchParams.id));
+  const { id: storeId } = await searchParams;
+  const storeData = await fetchStore(Number(storeId));
 
   return (
     <>
       <Header />
       <main className="flex flex-col m-auto max-w-[1260px]">
-        Query param: {JSON.stringify(storeData)}
         <section className="p-[24px]">
           <div className="flex items-center gap-[8px] mb-[12px]">
             <Image
@@ -39,22 +40,13 @@ export default async function Store({ searchParams }: IStoreProps) {
           </div>
           <div className="flex">
             <div className="flex gap-[12px] items-center flex-1">
-              <Image
-                alt="Compartilhar"
-                className="cursor-pointer"
-                height={24}
-                src="/assets/icons/share.svg"
-                width={24}
-              />
-              <Image
-                alt="Favoritar"
-                className="cursor-pointer"
-                height={24}
-                src="/assets/icons/favorite.svg"
-                width={24}
-              />
+              <Share className="cursor-pointer" height={24} width={24} />
+              <Favorite className="cursor-pointer" height={24} width={24} />
             </div>
-            <p>mais infos</p>
+            <div className="cursor-pointer flex gap-[4px] items-center ">
+              <p className="font-bold text-(--teal-400)">mais infos</p>
+              <ChevronRight height={12} width={12} />
+            </div>
           </div>
         </section>
       </main>
