@@ -4,7 +4,15 @@
     "name": "Matsuri Concept",
     "rating": 4.7,
     "delivery_value": 0,
+    "delivery_value_to_free": 0,
+    "distance": 5.2,
+    "minimum_value": 1500,
+    "delivery_time": {
+      "min": 30,
+      "max": 45
+    },
     "open": true,
+    "schedule": "11:00-22:00",
     "image": "/assets/stores/matsuri_concept.jpg"
   },
   {
@@ -12,16 +20,31 @@
     "name": "Subway - Avenida center",
     "rating": 4.3,
     "delivery_value": 600,
+    "delivery_value_to_free": 3500,
+    "distance": 3.8,
+    "minimum_value": 1500,
+    "delivery_time": {
+      "min": 30,
+      "max": 45
+    },
     "open": true,
+    "schedule": "08:00-22:00",
     "image": "/assets/stores/subway.jpg"
-    
   },
   {
     "id": 3,
     "name": "Burger King - Colombo",
     "rating": 4.5,
     "delivery_value": 1200,
+    "delivery_value_to_free": 3000,
+    "distance": 3.8,
+    "minimum_value": 2000,
+    "delivery_time": {
+      "min": 25,
+      "max": 40
+    },
     "open": false,
+    "schedule": "10:00-23:00",
     "image": "/assets/stores/burger_king.png"
   },
   {
@@ -29,15 +52,31 @@
     "name": "McDonald’s - Novo Centro",
     "rating": 4.4,
     "delivery_value": 750,
+    "delivery_value_to_free": 3000,
+    "distance": 4.1,
+    "minimum_value": 2000,
+    "delivery_time": {
+      "min": 25,
+      "max": 40
+    },
     "open": true,
+    "schedule": "10:00-23:00",
     "image": "/assets/stores/mcdonalds.jpg"
   },
   {
     "id": 5,
     "name": "Matsuri Concept - Rua da Aurora",
     "rating": 4.7,
-    "delivery_value": 0,
+    "delivery_value": 500,
+    "delivery_value_to_free": 3000,
+    "distance": 5.2,
+    "minimum_value": 1500,
+    "delivery_time": {
+      "min": 30,
+      "max": 45
+    },
     "open": true,
+    "schedule": "11:00-22:00",
     "image": "/assets/stores/matsuri_concept.jpg"
   },
   {
@@ -45,32 +84,63 @@
     "name": "Subway - Bairro Jardins",
     "rating": 4.3,
     "delivery_value": 600,
+    "delivery_value_to_free": 3000,
+    "distance": 4.5,
+    "minimum_value": 1500,
+    "delivery_time": {
+      "min": 30,
+      "max": 45
+    },
     "open": true,
+    "schedule": "08:00-22:00",
     "image": "/assets/stores/subway.jpg"
-    
   },
   {
     "id": 7,
     "name": "Burger King - Avenida Atlântica",
     "rating": 4.5,
-    "delivery_value": 1200,
+    "delivery_value": 0,
+    "delivery_value_to_free": 0,
+    "distance": 4.0,
+    "minimum_value": 2000,
+    "delivery_time": {
+      "min": 25,
+      "max": 40
+    },
     "open": true,
+    "schedule": "10:00-23:00",
     "image": "/assets/stores/burger_king.png"
   },
   {
     "id": 8,
     "name": "McDonald’s - Vila Mariana",
     "rating": 4.4,
-    "delivery_value": 750,
+    "delivery_value": 0,
+    "delivery_value_to_free": 0,
+    "distance": 4.0,
+    "minimum_value": 2000,
+    "delivery_time": {
+      "min": 25,
+      "max": 40
+    },
     "open": true,
+    "schedule": "10:00-23:00",
     "image": "/assets/stores/mcdonalds.jpg"
   },
   {
     "id": 9,
     "name": "Matsuri Concept - Rua das Acácias",
     "rating": 4.7,
-    "delivery_value": 0,
-    "open": true,
+    "delivery_value": 500,
+    "delivery_value_to_free": 3000,
+    "distance": 5.0,
+    "minimum_value": 1500,
+    "delivery_time": {
+      "min": 30,
+      "max": 45
+    },
+    "open": false,
+    "schedule": "11:00-22:00",
     "image": "/assets/stores/matsuri_concept.jpg"
   },
   {
@@ -78,16 +148,31 @@
     "name": "Subway - Bairro Morumbi",
     "rating": 4.3,
     "delivery_value": 600,
+    "delivery_value_to_free": 3000,
+    "distance": 4.5,
+    "minimum_value": 1500,
+    "delivery_time": {
+      "min": 30,
+      "max": 45
+    },
     "open": true,
+    "schedule": "08:00-22:00",
     "image": "/assets/stores/subway.jpg"
-    
   },
   {
     "id": 11,
     "name": "Burger King - Avenida Paulista",
     "rating": 4.0,
     "delivery_value": 1200,
+    "delivery_value_to_free": 3000,
+    "distance": 4.0,
+    "minimum_value": 2000,
+    "delivery_time": {
+      "min": 25,
+      "max": 40
+    },
     "open": true,
+    "schedule": "10:00-23:00",
     "image": "/assets/stores/burger_king.png"
   },
   {
@@ -95,7 +180,15 @@
     "name": "McDonald’s - Vila Madalena",
     "rating": 4.4,
     "delivery_value": 750,
+    "delivery_value_to_free": 3000,
+    "distance": 4.0,
+    "minimum_value": 2000,
+    "delivery_time": {
+      "min": 25,
+      "max": 40
+    },
     "open": false,
+    "schedule": "10:00-23:00",
     "image": "/assets/stores/mcdonalds.jpg"
   }
 ]

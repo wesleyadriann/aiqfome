@@ -8,3 +8,5 @@ interface IStore {
 }
 
 type IGetStoresResponse = IStore[];
+
+type IGetStoreById = Store;

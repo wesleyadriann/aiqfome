@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Header } from "~/components/Header";
-import { Footer } from "~/components/Footer";
 import { StoreCard } from "~/components/StoreCard";
 import { getStores } from "~/services/stores";
+import { createSlug } from "~/utils/slug";
 
 const fetchStores = async () => {
   try {
@@ -28,9 +29,10 @@ const fetchStores = async () => {
 
 export default async function Home() {
   const stores = await fetchStores();
+
   return (
     <>
-      <Header />
+      <Header withSearch />
       <main className="flex flex-col m-auto max-w-[1260px]">
         <Image
           alt="Rango barato no dia das crianças, peça com até 50% de desconto"
@@ -41,20 +43,25 @@ export default async function Home() {
         />
 
         <section className="flex flex-col gap-[16px] p-[16px]">
-          <p className="font-extrabold text-(--purple-500) text-xl">abertos</p>
+          <p className="font-extrabold text-(--brand) text-xl">abertos</p>
 
           {stores.opened.map((store) => (
-            <StoreCard key={store.id} {...store} />
+            <Link
+              key={store.id}
+              href="/loja/[name]"
+              as={`/loja/${createSlug(store.name)}?id=${store.id}`}
+            >
+              <StoreCard {...store} />
+            </Link>
           ))}
         </section>
         <section className="flex flex-col gap-[16px] p-[16px]">
-          <p className="font-extrabold text-(--purple-500) text-xl">fechados</p>
+          <p className="font-extrabold text-(--brand) text-xl">fechados</p>
           {stores.closed.map((store) => (
             <StoreCard key={store.id} {...store} />
           ))}
         </section>
       </main>
-      <Footer />
     </>
   );
 }

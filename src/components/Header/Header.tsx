@@ -2,13 +2,13 @@ import React, { FC } from "react";
 
 import Image from "next/image";
 
-interface IHeaderProps {
+type IHeaderProps = {
   withSearch?: boolean;
-}
+};
 
-const Component: FC<IHeaderProps> = () => {
+const Component: FC<IHeaderProps> = ({ withSearch }) => {
   return (
-    <header className="bg-(--purple-500) p-[16px] mb-[1px]">
+    <header className="bg-(--brand) p-[16px] mb-[1px]">
       <div className="flex items-center  m-auto max-w-[1260px]">
         <Image
           alt="Logo aiqfome"
@@ -38,8 +38,9 @@ const Component: FC<IHeaderProps> = () => {
           width={24}
         />
       </div>
-      <div
-        className="
+      {withSearch && (
+        <div
+          className="
           bg-white
           border
           border-(--dividers-gray)
@@ -52,18 +53,19 @@ const Component: FC<IHeaderProps> = () => {
           p-[8px]
           rounded-[8px]
           "
-      >
-        <Image
-          alt="Ícone de Busca"
-          height={24}
-          src="/assets/icons/search.svg"
-          width={24}
-        />
-        <input
-          className="font-semibold focus:outline-none w-full"
-          placeholder="busque pela loja ou culinária"
-        />
-      </div>
+        >
+          <Image
+            alt="Ícone de Busca"
+            height={24}
+            src="/assets/icons/search.svg"
+            width={24}
+          />
+          <input
+            className="font-semibold focus:outline-none w-full"
+            placeholder="busque pela loja ou culinária"
+          />
+        </div>
+      )}
     </header>
   );
 };

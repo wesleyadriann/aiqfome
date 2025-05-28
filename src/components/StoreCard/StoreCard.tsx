@@ -39,7 +39,7 @@ const Component: FC<IStoreCardProps> = (props) => {
         width={72}
       />
       <div className="font-bold">
-        <p>{name}</p>
+        <p className="font-(--text-medium)">{name}</p>
         <div className="flex items-center gap-[4px] text-sm ">
           <Image
             alt="Ícone preço de entrega"
@@ -52,7 +52,7 @@ const Component: FC<IStoreCardProps> = (props) => {
           {deliveryIsFree ? (
             <span className="text-(--teal-600)">grátis</span>
           ) : (
-            <span className="text-(--purple-500)">{deliveryValue}</span>
+            <span className="text-(--brand)">{deliveryValue}</span>
           )}
           <span className="text-xs text-(--dividers-gray)">•</span>
           <Image
