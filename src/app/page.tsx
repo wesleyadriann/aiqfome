@@ -31,7 +31,7 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main className="max-w-[1260px]">
+      <main className="flex flex-col m-auto max-w-[1260px]">
         <Image
           alt="Rango barato no dia das crianças, peça com até 50% de desconto"
           className="w-full max-h-[420px] object-cover"
@@ -44,13 +44,13 @@ export default async function Home() {
           <p className="font-extrabold text-(--purple-500) text-xl">abertos</p>
 
           {stores.opened.map((store) => (
-            <StoreCard key={store.id} />
+            <StoreCard key={store.id} {...store} />
           ))}
         </section>
         <section className="flex flex-col gap-[16px] p-[16px]">
           <p className="font-extrabold text-(--purple-500) text-xl">fechados</p>
           {stores.closed.map((store) => (
-            <StoreCard key={store.id} />
+            <StoreCard key={store.id} {...store} />
           ))}
         </section>
       </main>

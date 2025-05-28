@@ -8,8 +8,8 @@ interface IHeaderProps {
 
 const Component: FC<IHeaderProps> = () => {
   return (
-    <header className="bg-(--purple-500) p-[16px]">
-      <div className="flex items-center">
+    <header className="bg-(--purple-500) p-[16px] mb-[1px]">
+      <div className="flex items-center  m-auto max-w-[1260px]">
         <Image
           alt="Logo aiqfome"
           className="mr-[24px]"
@@ -18,12 +18,12 @@ const Component: FC<IHeaderProps> = () => {
           width={32}
         />
         <div className="flex flex-1 gap-[10px]">
-          {/* <Image
+          <Image
             alt="Ícone Pin"
             height={24}
             src="/assets/icons/pin.svg"
             width={24}
-          /> */}
+          />
 
           <div className="font-bold text-white">
             <p className="text-sm text-(--purple-200)">entregando em</p>
@@ -46,9 +46,12 @@ const Component: FC<IHeaderProps> = () => {
           flex
           gap-[8px]
           items-center
+          m-auto
+          max-w-[1260px]
           mt-[16px]
           p-[8px]
-          rounded-[8px]"
+          rounded-[8px]
+          "
       >
         <Image
           alt="Ícone de Busca"
