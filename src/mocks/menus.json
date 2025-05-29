@@ -1,0 +1,173 @@
+[
+  {
+    "restaurantId": 1,
+    "menu": [
+      {    
+        "category": "Niguiris",
+        "items": [
+          {
+            "name": "Salmão",
+            "description": "salmão fresco com arroz",
+            "price": 1342,
+            "promotional_price": 287,
+            "note": {
+              "spicy": true
+            }
+          },
+          {
+            "name": "Atum",
+            "description": "atum fresco com arroz",
+            "price": 1789
+          },
+          {
+            "name": "Shimeji",
+            "description": "cogumelos shimeji com arroz",
+            "price": 1123
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "category": "Ceviches",
+        "description": "um prato super refrescante de peixe fatiado e o marinado",
+        "items": [
+          {
+            "name": "Ceviche de Salmão",
+            "description": "salmão fresco marinado com limão, cebola roxa e coentro",
+            "price": 2103,
+            "promotional_price": 399
+          },
+          {
+            "name": "Ceviche de Atum",
+            "description": "atum fresco marinado com limão, cebola roxa e coentro",
+            "price": 1877
+          },
+          {
+            "name": "Ceviche Misto",
+            "description": "salmão e atum marinados com limão, cebola roxa e coentro",
+            "price": 2399,
+            "variants": [
+              {
+                "name": "médio",
+                "value": 250,
+                "price": 2399,
+                "promotional_price": 1999
+              },
+              {
+                "name": "Grande",
+                "value": 400,
+                "price": 2399
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Temakis",
+        "description": "sushi em forma de cone com salmão e cream cheese",
+        "items": [
+          {
+            "name": "Califórnia",
+            "description": "kani, pepino e maçã ou manga",
+            "price": 1456,
+            "promotional_price": 312,
+            "note": {
+              "vegan": true
+            }
+          },
+          {
+            "name": "Filadélfia",
+            "description": "arroz, salmão fresco, cream cheese e cebolinha",
+            "price": 1678
+          },
+          {
+            "name": "Mix",
+            "description": "escolha 3 ingredientes: shimeji, alface americana, rúcula, pepino, tomate seco, cream cheese, maçã,",
+            "price": 1234,
+            "note": {
+              "spicy": true
+            }
+          },
+          {
+            "name": "Salmão picante",
+            "description": "alga, arroz, salmão fresco, pimenta e cebolinha",
+            "price": 1567,
+            "note": {
+              "spicy": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "restaurantId": 4,
+    "menu": [
+      {
+        "category": "Sanduíches",
+        "items": [
+          {
+            "name": "Big Mac",
+            "description": "Dois hambúrgueres, alface, queijo, molho especial, cebola e picles no pão com gergelim",
+            "price": 2090
+          },
+          {
+            "name": "Cheeseburger",
+            "description": "Hambúrguer, queijo, ketchup, mostarda, cebola e picles no pão",
+            "price": 1190
+          },
+          {
+            "name": "Quarterão com Queijo",
+            "description": "Hambúrguer de carne bovina, queijo, ketchup, mostarda, cebola e picles no pão",
+            "price": 1890
+          }
+        ]
+      },
+      {
+        "category": "Acompanhamentos",
+        "items": [
+          {
+            "name": "Batata Frita Média",
+            "description": "Batatas fritas crocantes",
+            "price": 990
+          },
+          {
+            "name": "McNuggets 10 unidades",
+            "description": "10 pedaços de frango empanado",
+            "price": 1690
+          }
+        ]
+      },
+      {
+        "category": "Bebidas",
+        "items": [
+          {
+            "name": "Refrigerante 500ml",
+            "description": "Coca-Cola, Guaraná ou Fanta",
+            "price": 850
+          },
+          {
+            "name": "Suco de Laranja",
+            "description": "Suco natural de laranja",
+            "price": 950
+          }
+        ]
+      },
+      {
+        "category": "Sobremesas",
+        "items": [
+          {
+            "name": "McFlurry",
+            "description": "Sorvete de baunilha com cobertura e pedaços de chocolate",
+            "price": 1300
+          },
+          {
+            "name": "Sundae",
+            "description": "Sorvete de baunilha com cobertura de chocolate ou morango",
+            "price": 1000
+          }
+        ]
+      }
+    ]
+  }
+]

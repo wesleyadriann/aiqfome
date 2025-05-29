@@ -4,9 +4,11 @@ import Link from "next/link";
 import { Header } from "~/components/Header";
 import { StoreCard } from "~/components/StoreCard";
 import { getStores } from "~/services/stores";
+import { logger } from "~/utils/logger";
 import { createSlug } from "~/utils/slug";
 
 const fetchStores = async () => {
+  logger.info("Home.fetchStores - start");
   try {
     const response = await getStores();
     const parsedResponse = response.reduce(
@@ -20,9 +22,10 @@ const fetchStores = async () => {
       },
       { opened: [] as IStore[], closed: [] as IStore[] }
     );
+    logger.info("Home.fetchStores - end");
     return parsedResponse;
   } catch (error) {
-    console.error("Home.fetchStores - Exception:", error);
+    logger.error("Home.fetchStores - Exception:", error);
     return { opened: [], closed: [] };
   }
 };
@@ -33,7 +36,7 @@ export default async function Home() {
   return (
     <>
       <Header withSearch />
-      <main className="flex flex-col m-auto max-w-[1260px]">
+      <main className="flex flex-col m-auto max-w-7xl">
         <Image
           alt="Rango barato no dia das crianças, peça com até 50% de desconto"
           className="w-full max-h-[420px] object-cover"
@@ -42,7 +45,7 @@ export default async function Home() {
           width={1260}
         />
 
-        <section className="flex flex-col gap-[16px] p-[16px]">
+        <section className="flex flex-col gap-4 p-4">
           <p className="font-extrabold text-(--brand) text-xl">abertos</p>
 
           {stores.opened.map((store) => (
@@ -51,14 +54,18 @@ export default async function Home() {
               href="/loja/[name]"
               as={`/loja/${createSlug(store.name)}?id=${store.id}`}
             >
-              <StoreCard {...store} />
+              <StoreCard {...store} deliveryValue={store.delivery_info.fee} />
             </Link>
           ))}
         </section>
-        <section className="flex flex-col gap-[16px] p-[16px]">
+        <section className="flex flex-col gap-4 p-4">
           <p className="font-extrabold text-(--brand) text-xl">fechados</p>
           {stores.closed.map((store) => (
-            <StoreCard key={store.id} {...store} />
+            <StoreCard
+              {...store}
+              deliveryValue={store.delivery_info.fee}
+              key={store.id}
+            />
           ))}
         </section>
       </main>

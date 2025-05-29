@@ -10,18 +10,18 @@ type IHeaderProps = {
 
 const Component: FC<IHeaderProps> = ({ withSearch }) => {
   return (
-    <header className="bg-(--brand) p-[16px] mb-[1px]">
-      <div className="flex items-center  m-auto max-w-[1260px]">
+    <header className="bg-(--brand) mb-[1px] p-4">
+      <div className="flex items-center m-auto max-w-7xl">
         <Link href="/">
           <Image
             alt="Logo aiqfome"
-            className="mr-[24px]"
+            className="mr-6"
             height={32}
             src="/assets/aiq_branding.svg"
             width={32}
           />
         </Link>
-        <div className="flex flex-1 gap-[10px] items-center">
+        <div className="flex flex-1 gap-2.5 items-center">
           <Pin height={24} width={24} />
           <div className="font-bold text-white">
             <p className="text-sm text-(--purple-200)">entregando em</p>
@@ -37,13 +37,14 @@ const Component: FC<IHeaderProps> = ({ withSearch }) => {
           border
           border-(--dividers-gray)
           flex
-          gap-[8px]
+
+          gap-2
           items-center
           m-auto
-          max-w-[1260px]
-          mt-[16px]
-          p-[8px]
-          rounded-[8px]
+          max-w-7xl
+          mt-4
+          p-2
+          rounded-lg
           "
         >
           <Search height={24} width={24} />

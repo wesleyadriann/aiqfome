@@ -1,30 +1,24 @@
-import React, { FC, useMemo } from "react";
+import React, { FC } from "react";
 
 import Image from "next/image";
 
 import { IStoreCardProps } from "./types";
 import { DeliveryBiker, DeliveryHelmet, Rating } from "~/assets/icons";
+import { formatCentsToBrl } from "~/utils/format";
 
 const Component: FC<IStoreCardProps> = (props) => {
-  const { delivery_value, image, name, open, rating } = props;
+  const { deliveryValue, image, name, open, rating } = props;
 
-  const deliveryValue = useMemo(() => {
-    return new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    }).format(delivery_value / 100);
-  }, [delivery_value]);
-
-  const deliveryIsFree = delivery_value === 0;
+  const deliveryIsFree = deliveryValue === 0;
   return (
     <div
       className={`
-        items-center
         bg-(--neutrals-50)
         flex
-        gap-[12px]
+        gap-3
+        items-center
         overflow-hidden
-        rounded-[8px]
+        rounded-lg
         ${open && "cursor-pointer"}
       `}
     >
@@ -40,8 +34,8 @@ const Component: FC<IStoreCardProps> = (props) => {
         width={72}
       />
       <div className="font-bold">
-        <p className="font-(--text-medium)">{name}</p>
-        <div className="flex items-center gap-[4px] text-sm ">
+        <p className="text-(--text-medium)">{name}</p>
+        <div className="flex items-center gap-1 text-sm ">
           {deliveryIsFree ? (
             <>
               <DeliveryBiker height={24} width={24} />
@@ -50,13 +44,15 @@ const Component: FC<IStoreCardProps> = (props) => {
           ) : (
             <>
               <DeliveryHelmet height={24} width={24} />
-              <span className="text-(--brand)">{deliveryValue}</span>
+              <span className="text-(--brand)">
+                {formatCentsToBrl(deliveryValue)}
+              </span>
             </>
           )}
 
           <span className="text-xs text-(--dividers-gray)">•</span>
           <Rating height={24} width={24} />
-          <span className="text-(--neutrals-500)">{rating.toFixed(1)}</span>
+          <span className="text-(--text-secondary)">{rating.toFixed(1)}</span>
         </div>
       </div>
     </div>

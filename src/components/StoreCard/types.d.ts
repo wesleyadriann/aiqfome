@@ -1,7 +1,7 @@
 export type IStoreCardProps = {
   name: string;
   rating: number;
-  delivery_value: number;
+  deliveryValue: number;
   open: boolean;
   image: string;
 };

@@ -23,8 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${nunitoSans.className} antialiased min-h-screen`}>
-        {children}
+      <body
+        className={`${nunitoSans.className} antialiased flex flex-col min-h-screen`}
+      >
+        <section className="flex-1">{children}</section>
         <Footer />
       </body>
     </html>
