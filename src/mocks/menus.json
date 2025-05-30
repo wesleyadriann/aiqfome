@@ -35,7 +35,36 @@
             "name": "Ceviche de Salmão",
             "description": "salmão fresco marinado com limão, cebola roxa e coentro",
             "price": 2103,
-            "promotional_price": 399
+            "promotional_price": 399,
+            "options": [
+              {
+                "name": "acompanhamentos",
+                "min_selection": 1,
+                "max_selection": 2,
+                "options": [
+                  {
+                    "name": "shoyu",
+                    "required": true,
+                    "max_selection": 2
+                  },
+                  {
+                    "name": "gengibre",
+                    "required": true,
+                    "max_selection": 2
+                  },
+                  {
+                    "name": "wasabi",
+                    "required": true,
+                    "max_selection": 2
+                  },
+                  {
+                    "name": "sem acompanhamentos",
+                    "required": true,
+                    "max_selection": 2
+                  }
+                ]
+              }
+            ]
           },
           {
             "name": "Ceviche de Atum",
@@ -98,7 +127,32 @@
           }
         ]
       }
-    ]
+    ],
+    "drinks": {
+      "category": "Bebidas",
+      "items": [
+        {
+          "name": "Coca-Cola",
+          "description": "350ml",
+          "price": 500
+        },
+        {
+          "name": "Chá Gelado",
+          "description": "Chá gelado de pêssego ou limão",
+          "price": 600
+        },
+        {
+          "name": "Suco de Laranja",
+          "description": "Suco natural de laranja",
+          "price": 700
+        },
+        {
+          "name": "Água Mineral",
+          "description": "500ml",
+          "price": 300
+        }
+      ] 
+    }
   },
   {
     "restaurantId": 2,
@@ -168,23 +222,28 @@
             "price": 590
           }
         ]
-      },
-      {
-        "category": "Bebidas",
-        "items": [
-          {
-            "name": "Refrigerante 500ml",
-            "description": "Coca-Cola, Guaraná ou Fanta",
-            "price": 850
-          },
-          {
-            "name": "Suco Natural",
-            "description": "Suco natural de laranja ou uva",
-            "price": 950
-          }
-        ]
       }
-    ]
+    ],
+    "drinks": {
+      "category": "Bebidas",
+      "items": [
+        {
+          "name": "Refrigerante 500ml",
+          "description": "Coca-Cola, Guaraná ou Fanta",
+          "price": 850
+        },
+        {
+          "name": "Suco Natural",
+          "description": "Suco natural de laranja ou uva",
+          "price": 950
+        },
+        {
+          "name": "Água Mineral",
+          "description": "500ml",
+          "price": 300
+        }
+      ]
+    }
   },
   {
     "restaurantId": 3,
@@ -224,21 +283,7 @@
           }
         ]
       },
-      {
-        "category": "Bebidas",
-        "items": [
-          {
-            "name": "Refrigerante 500ml",
-            "description": "Coca-Cola, Guaraná ou Fanta",
-            "price": 850
-          },
-          {
-            "name": "Milkshake",
-            "description": "Milkshake de chocolate, morango ou baunilha",
-            "price": 1200
-          }
-        ]
-      },
+
       {
         "category": "Sobremesas",
         "items": [
@@ -251,10 +296,35 @@
             "name": "Torta de Maçã",
             "description": "Torta de maçã quente",
             "price": 900
-          }
+          },
+          {
+          "name": "Milkshake",
+          "description": "Milkshake de chocolate, morango ou baunilha",
+          "price": 1200
+        }
         ]
       }
-    ]
+    ],
+    "drinks": {
+      "category": "Bebidas",
+      "items": [
+        {
+          "name": "Refrigerante 500ml",
+          "description": "Coca-Cola, Guaraná ou Fanta",
+          "price": 850
+        },
+        {
+          "name": "Suco de Laranja",
+          "description": "Suco natural de laranja",
+          "price": 950
+        },
+        {
+          "name": "Água Mineral",
+          "description": "500ml",
+          "price": 300
+        }
+      ]
+    }
   },
   {
     "restaurantId": 4,
@@ -295,21 +365,6 @@
         ]
       },
       {
-        "category": "Bebidas",
-        "items": [
-          {
-            "name": "Refrigerante 500ml",
-            "description": "Coca-Cola, Guaraná ou Fanta",
-            "price": 850
-          },
-          {
-            "name": "Suco de Laranja",
-            "description": "Suco natural de laranja",
-            "price": 950
-          }
-        ]
-      },
-      {
         "category": "Sobremesas",
         "items": [
           {
@@ -324,6 +379,21 @@
           }
         ]
       }
-    ]
+    ],
+    "drinks": {
+      "category": "Bebidas",
+      "items": [
+        {
+          "name": "Refrigerante 500ml",
+          "description": "Coca-Cola, Guaraná ou Fanta",
+          "price": 850
+        },
+        {
+          "name": "Suco de Laranja",
+          "description": "Suco natural de laranja",
+          "price": 950
+        }
+      ]
+    }
   }
 ]

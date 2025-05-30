@@ -3,3 +3,8 @@ export type IAccordionProps = {
   description?: string;
   items: IMenuItem[];
 };
+
+export type IAccordionItemProps = {
+  item: IMenuItem;
+  onClick: (item: IMenuItem) => void;
+};

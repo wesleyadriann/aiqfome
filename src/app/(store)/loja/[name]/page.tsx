@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 import {
   ChevronRight,
@@ -31,7 +32,8 @@ const fetchStore = async (id: number) => {
     };
   } catch (error) {
     logger.error("Store.fetchStore - Exception:", error);
-    throw error;
+    logger.info("Store.fetchStore - redirecting to home");
+    redirect("/");
   }
 };
 
@@ -39,6 +41,7 @@ export default async function Store({ searchParams }: IStoreProps) {
   const { id: storeId } = await searchParams;
   const storeData = await fetchStore(Number(storeId));
 
+  const deliveryIsFree = storeData.info.delivery_info.fee === 0;
   return (
     <>
       <Header />
@@ -66,33 +69,55 @@ export default async function Store({ searchParams }: IStoreProps) {
             </div>
           </div>
 
-          <div className="flex font-bold gap-2 items-center mb-1 text-(--text-secondary)">
-            <DeliveryBiker height={24} width={24} fill="var(--brand)" />
-            <span className="text-(--brand)">
-              {formatCentsToBrl(storeData.info.delivery_info.fee)}
+          <div
+            className="
+            flex
+            font-bold
+            gap-2
+            items-center
+            mb-1
+            text-(--text-secondary)"
+          >
+            <DeliveryBiker
+              fill={deliveryIsFree ? "var(--success)" : "var(--brand)"}
+              height={24}
+              width={24}
+            />
+            <span
+              className={deliveryIsFree ? "text-(--success)" : "text-(--brand)"}
+            >
+              {deliveryIsFree
+                ? "grátis"
+                : formatCentsToBrl(storeData.info.delivery_info.fee)}
             </span>
-            <ChevronRight fill="var(--brand)" height={12} width={12} />
+            <ChevronRight
+              fill={deliveryIsFree ? "var(--success)" : "var(--brand)"}
+              height={12}
+              width={12}
+            />
             <span>•</span>
             <span>hoje, {storeData.info.delivery_info.estimated_time}min</span>
             <span>•</span>
             <span>{storeData.info.delivery_info.distance.toFixed(1)}km</span>
           </div>
 
-          <div
-            className="
-            bg-(--teal-50)
-            font-bold
-            mb-1
-            p-1.5
-            rounded-sm
-            text-(--teal-600)
-            w-fit"
-          >
-            entrega grátis acima de{" "}
-            {formatCentsToBrl(
-              storeData.info.delivery_info.free_delivery_threshold
-            )}
-          </div>
+          {!deliveryIsFree && (
+            <div
+              className="
+                bg-(--teal-50)
+                font-bold
+                mb-1
+                p-1.5
+                rounded-sm
+                text-(--teal-600)
+                w-fit"
+            >
+              entrega grátis acima de{" "}
+              {formatCentsToBrl(
+                storeData.info.delivery_info.free_delivery_threshold
+              )}
+            </div>
+          )}
 
           <div className="flex font-bold gap-1.5 mb-1.5 items-center text-(--text-secondary)">
             <Rating height={16} width={16} />

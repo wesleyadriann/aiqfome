@@ -1,10 +1,13 @@
 "use client";
 
 import React, { useCallback, useRef, useState } from "react";
-import { ChevronRight, Paid } from "~/assets/icons";
-import { formatCentsToBrl } from "~/utils/format";
+import { useRouter } from "next/navigation";
+
+import { ChevronRight } from "~/assets/icons";
 
 import { IAccordionProps } from "./types";
+import { AccordionItem } from "./AccordionItem";
+import { createSlug } from "~/utils/slug";
 
 const Component: React.FC<IAccordionProps> = ({
   title,
@@ -13,11 +16,21 @@ const Component: React.FC<IAccordionProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const router = useRouter();
+
   const contentRef = useRef<HTMLDivElement>(null);
 
   const handlerToggle = useCallback(() => {
     setIsOpen((prev) => !prev);
   }, []);
+
+  const handlerPressItem = useCallback(
+    (item: IMenuItem) => {
+      window.localStorage.setItem("selectedProduct", JSON.stringify(item));
+      router.push(`/produto/${createSlug(item.name)}`);
+    },
+    [router]
+  );
 
   return (
     <div className="bg-white py-3 px-4 w-full">
@@ -63,39 +76,11 @@ const Component: React.FC<IAccordionProps> = ({
       >
         <div className="pt-3 gap-6 flex flex-col">
           {items.map((item, index) => (
-            <div key={`${item.name}_${index}`} className="cursor-pointer flex">
-              <div className="flex-1 pr-4">
-                <p className="font-semibold">{item.name}</p>
-                <p className="leading-none line-clamp-2 text-(--text-secondary) text-xs">
-                  {item.description}
-                </p>
-              </div>
-              <div className="font-bold text-right">
-                {!!item.promotional_price ? (
-                  <>
-                    <p className="text-(--text-secondary) line-through text-xs">
-                      {formatCentsToBrl(item.price)}
-                    </p>
-                    <p className="flex items-center text-(--success) justify-end gap-0.5">
-                      <Paid height={16} width={16} />
-
-                      {formatCentsToBrl(item.promotional_price)}
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    {item.variants?.length > 0 && (
-                      <p className="text-(--text-secondary) text-center text-xs">
-                        a partir de
-                      </p>
-                    )}
-                    <p className="text-(--brand)">
-                      {formatCentsToBrl(item.price)}
-                    </p>
-                  </>
-                )}
-              </div>
-            </div>
+            <AccordionItem
+              item={item}
+              key={`${item.name}_${index}`}
+              onClick={handlerPressItem}
+            />
           ))}
         </div>
       </div>
