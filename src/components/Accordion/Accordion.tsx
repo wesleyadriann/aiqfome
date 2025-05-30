@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useRef, useCallback } from "react";
-import { ChevronRight } from "~/assets/icons";
-import { IAccordionProps } from "./types";
+import React, { useCallback, useRef, useState } from "react";
+import { ChevronRight, Paid } from "~/assets/icons";
 import { formatCentsToBrl } from "~/utils/format";
+
+import { IAccordionProps } from "./types";
 
 const Component: React.FC<IAccordionProps> = ({
   title,
@@ -63,19 +64,36 @@ const Component: React.FC<IAccordionProps> = ({
         <div className="pt-3 gap-6 flex flex-col">
           {items.map((item, index) => (
             <div key={`${item.name}_${index}`} className="cursor-pointer flex">
-              <div className="flex-1">
+              <div className="flex-1 pr-4">
                 <p className="font-semibold">{item.name}</p>
-                <span className="text-(--text-secondary) text-xs">
+                <p className="leading-none line-clamp-2 text-(--text-secondary) text-xs">
                   {item.description}
-                </span>
+                </p>
               </div>
-              <div>
-                {item.variants?.length > 0 && (
-                  <p className="text-(--text-secondary) text-xs">a partir de</p>
+              <div className="font-bold text-right">
+                {!!item.promotional_price ? (
+                  <>
+                    <p className="text-(--text-secondary) line-through text-xs">
+                      {formatCentsToBrl(item.price)}
+                    </p>
+                    <p className="flex items-center text-(--success) justify-end gap-0.5">
+                      <Paid height={16} width={16} />
+
+                      {formatCentsToBrl(item.promotional_price)}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    {item.variants?.length > 0 && (
+                      <p className="text-(--text-secondary) text-center text-xs">
+                        a partir de
+                      </p>
+                    )}
+                    <p className="text-(--brand)">
+                      {formatCentsToBrl(item.price)}
+                    </p>
+                  </>
                 )}
-                <span className="font-bold text-(--brand)">
-                  {formatCentsToBrl(item.price)}
-                </span>
               </div>
             </div>
           ))}

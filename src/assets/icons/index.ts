@@ -2,6 +2,7 @@ export { default as ChevronRight } from "./ChevronRight";
 export { default as DeliveryBiker } from "./DeliveryBiker";
 export { default as DeliveryHelmet } from "./DeliveryHelmet";
 export { default as Favorite } from "./Favorite";
+export { default as Paid } from "./Paid";
 export { default as Person } from "./Person";
 export { default as Pin } from "./Pin";
 export { default as Rating } from "./Rating";

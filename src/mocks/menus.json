@@ -2,7 +2,7 @@
   {
     "restaurantId": 1,
     "menu": [
-      {    
+      {
         "category": "Niguiris",
         "items": [
           {
@@ -45,7 +45,7 @@
           {
             "name": "Ceviche Misto",
             "description": "salmão e atum marinados com limão, cebola roxa e coentro",
-            "price": 2399,
+            "price": 1999,
             "variants": [
               {
                 "name": "médio",
@@ -95,6 +95,162 @@
             "note": {
               "spicy": true
             }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "restaurantId": 2,
+    "menu": [
+      {
+        "category": "Sanduíches",
+        "description": "Monte seu sanduíche do seu jeito",
+        "items": [
+          {
+            "name": "Sub de Frango",
+            "description": "Peito de frango grelhado, vegetais frescos e pão à sua escolha",
+            "price": 1890,
+            "variants": [
+              {
+                "name": "15cm",
+                "price": 1890
+              },
+              {
+                "name": "30cm",
+                "price": 2990
+              }
+            ]
+          },
+          {
+            "name": "Sub de Carne",
+            "description": "Carne bovina temperada, vegetais frescos e pão à sua escolha",
+            "price": 1990,
+            "variants": [
+              {
+                "name": "15cm",
+                "price": 1990
+              },
+              {
+                "name": "30cm",
+                "price": 3190
+              }
+            ]
+          },
+          {
+            "name": "Sub Veggie",
+            "description": "Vegetais frescos, queijo e pão à sua escolha",
+            "price": 1690,
+            "variants": [
+              {
+                "name": "15cm",
+                "price": 1690
+              },
+              {
+                "name": "30cm",
+                "price": 2590
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Acompanhamentos",
+        "items": [
+          {
+            "name": "Cookie",
+            "description": "Cookie de chocolate ou baunilha",
+            "price": 490
+          },
+          {
+            "name": "Chips",
+            "description": "Batata chips crocante",
+            "price": 590
+          }
+        ]
+      },
+      {
+        "category": "Bebidas",
+        "items": [
+          {
+            "name": "Refrigerante 500ml",
+            "description": "Coca-Cola, Guaraná ou Fanta",
+            "price": 850
+          },
+          {
+            "name": "Suco Natural",
+            "description": "Suco natural de laranja ou uva",
+            "price": 950
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "restaurantId": 3,
+    "menu": [
+      {
+        "category": "Sanduíches",
+        "items": [
+          {
+            "name": "Whopper",
+            "description": "Carne bovina grelhada, alface, tomate, maionese, ketchup, picles e cebola no pão com gergelim",
+            "price": 2190
+          },
+          {
+            "name": "Cheeseburger Duplo",
+            "description": "Dois hambúrgueres, queijo, ketchup, mostarda, cebola e picles",
+            "price": 1790
+          },
+          {
+            "name": "Chicken Sandwich",
+            "description": "Filé de frango empanado, alface e maionese no pão",
+            "price": 1690
+          }
+        ]
+      },
+      {
+        "category": "Acompanhamentos",
+        "items": [
+          {
+            "name": "Batata Frita Média",
+            "description": "Batatas fritas crocantes",
+            "price": 990
+          },
+          {
+            "name": "Onion Rings",
+            "description": "Anéis de cebola empanados",
+            "price": 1190
+          }
+        ]
+      },
+      {
+        "category": "Bebidas",
+        "items": [
+          {
+            "name": "Refrigerante 500ml",
+            "description": "Coca-Cola, Guaraná ou Fanta",
+            "price": 850
+          },
+          {
+            "name": "Milkshake",
+            "description": "Milkshake de chocolate, morango ou baunilha",
+            "price": 1200
+          }
+        ]
+      },
+      {
+        "category": "Sobremesas",
+        "items": [
+          {
+            "name": "Sundae",
+            "description": "Sorvete de baunilha com cobertura de chocolate ou morango",
+            "price": 1000
+          },
+          {
+            "name": "Torta de Maçã",
+            "description": "Torta de maçã quente",
+            "price": 900
           }
         ]
       }

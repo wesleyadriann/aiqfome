@@ -33,14 +33,15 @@
     "id": 3,
     "name": "Burger King - Colombo",
     "rating": 4.5,
+    
     "delivery_info": {
-      "fee": 1200,
+      "fee": 0,
       "estimated_time": "25-40",
-      "distance": 3.8,
-      "free_delivery_threshold": 3000,
+      "distance": 4.0,
+      "free_delivery_threshold": 0,
       "minimum_order": 2000
     },
-    "open": false,
+    "open": true,
     "closing_time": "23:00",
     "image": "/assets/stores/burger_king.png"
   },
@@ -70,7 +71,7 @@
       "free_delivery_threshold": 3000,
       "minimum_order": 1500
     },
-    "open": true,
+    "open": false,
     "closing_time": "22:00",
     "image": "/assets/stores/matsuri_concept.jpg"
   },
@@ -85,7 +86,7 @@
       "free_delivery_threshold": 3000,
       "minimum_order": 1500
     },
-    "open": true,
+    "open": false,
     "closing_time": "22:00",
     "image": "/assets/stores/subway.jpg"
   },
@@ -93,14 +94,14 @@
     "id": 7,
     "name": "Burger King - Avenida Atlântica",
     "rating": 4.5,
-    "delivery_info": {
-      "fee": 0,
+"delivery_info": {
+      "fee": 1200,
       "estimated_time": "25-40",
-      "distance": 4.0,
-      "free_delivery_threshold": 0,
+      "distance": 3.8,
+      "free_delivery_threshold": 3000,
       "minimum_order": 2000
     },
-    "open": true,
+    "open": false,
     "closing_time": "23:00",
     "image": "/assets/stores/burger_king.png"
   },
@@ -115,7 +116,7 @@
       "free_delivery_threshold": 0,
       "minimum_order": 2000
     },
-    "open": true,
+    "open": false,
     "closing_time": "23:00",
     "image": "/assets/stores/mcdonalds.jpg"
   },
@@ -145,7 +146,7 @@
       "free_delivery_threshold": 3000,
       "minimum_order": 1500
     },
-    "open": true,
+    "open": false,
     "closing_time": "22:00",
     "image": "/assets/stores/subway.jpg"
   },
@@ -160,7 +161,7 @@
       "free_delivery_threshold": 3000,
       "minimum_order": 2000
     },
-    "open": true,
+    "open": false,
     "closing_time": "23:00",
     "image": "/assets/stores/burger_king.png"
   },
