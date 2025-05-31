@@ -1,0 +1,37 @@
+import { redirect } from "next/navigation";
+
+import { RestaurantPage } from "~/pages/Restaurant/Restaurant";
+
+import { getMenuByRestaurantId } from "~/services/menus";
+import { getRestaurantById } from "~/services/restaurants";
+
+import { logger } from "~/utils/logger";
+
+type IRestaurantProps = {
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+const fetchRestaurant = async (id: number) => {
+  logger.info(`Restaurant.fetchRestaurant - start - id=[${id}]`);
+  try {
+    const restaurantResponse = await getRestaurantById(id);
+    const menuResponse = await getMenuByRestaurantId(id);
+
+    logger.info("Restaurant.fetchRestaurant - end");
+    return {
+      info: restaurantResponse,
+      menu: menuResponse.menu,
+    };
+  } catch (error) {
+    logger.error("Restaurant.fetchRestaurant - Exception:", error);
+    logger.info("Restaurant.fetchRestaurant - redirecting to home");
+    redirect("/");
+  }
+};
+
+export default async function Restaurant({ searchParams }: IRestaurantProps) {
+  const { id: restaurantId } = await searchParams;
+  const restaurant = await fetchRestaurant(Number(restaurantId));
+
+  return <RestaurantPage {...restaurant} />;
+}

@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useCallback, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import React, { useCallback, useRef, useState } from "react";
 
 import { ChevronRight } from "~/assets/icons";
-
-import { IAccordionProps } from "./types";
-import { AccordionItem } from "./AccordionItem";
 import { createSlug } from "~/utils/slug";
+
+import { AccordionItem } from "./AccordionItem";
+import { IAccordionProps } from "./types";
 
 const Component: React.FC<IAccordionProps> = ({
   title,

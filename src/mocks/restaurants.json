@@ -12,7 +12,7 @@
     "rating": 4.7,
     "open": true,
     "closing_time": "22:00",
-    "image": "/assets/stores/matsuri_concept.jpg"
+    "image": "/assets/restaurants/matsuri_concept.jpg"
   },
   {
     "id": 2,
@@ -27,7 +27,7 @@
     "rating": 3.3,
     "open": true,
     "closing_time": "22:00",
-    "image": "/assets/stores/subway.jpg"
+    "image": "/assets/restaurants/subway.jpg"
   },
   {
     "id": 3,
@@ -43,7 +43,7 @@
     },
     "open": true,
     "closing_time": "23:00",
-    "image": "/assets/stores/burger_king.png"
+    "image": "/assets/restaurants/burger_king.png"
   },
   {
     "id": 4,
@@ -58,7 +58,7 @@
     },
     "open": true,
     "closing_time": "23:00",
-    "image": "/assets/stores/mcdonalds.jpg"
+    "image": "/assets/restaurants/mcdonalds.jpg"
   },
   {
     "id": 5,
@@ -73,7 +73,7 @@
     },
     "open": false,
     "closing_time": "22:00",
-    "image": "/assets/stores/matsuri_concept.jpg"
+    "image": "/assets/restaurants/matsuri_concept.jpg"
   },
   {
     "id": 6,
@@ -88,7 +88,7 @@
     },
     "open": false,
     "closing_time": "22:00",
-    "image": "/assets/stores/subway.jpg"
+    "image": "/assets/restaurants/subway.jpg"
   },
   {
     "id": 7,
@@ -103,7 +103,7 @@
     },
     "open": false,
     "closing_time": "23:00",
-    "image": "/assets/stores/burger_king.png"
+    "image": "/assets/restaurants/burger_king.png"
   },
   {
     "id": 8,
@@ -118,7 +118,7 @@
     },
     "open": false,
     "closing_time": "23:00",
-    "image": "/assets/stores/mcdonalds.jpg"
+    "image": "/assets/restaurants/mcdonalds.jpg"
   },
   {
     "id": 9,
@@ -133,7 +133,7 @@
     },
     "open": false,
     "closing_time": "22:00",
-    "image": "/assets/stores/matsuri_concept.jpg"
+    "image": "/assets/restaurants/matsuri_concept.jpg"
   },
   {
     "id": 10,
@@ -148,7 +148,7 @@
     },
     "open": false,
     "closing_time": "22:00",
-    "image": "/assets/stores/subway.jpg"
+    "image": "/assets/restaurants/subway.jpg"
   },
   {
     "id": 11,
@@ -163,7 +163,7 @@
     },
     "open": false,
     "closing_time": "23:00",
-    "image": "/assets/stores/burger_king.png"
+    "image": "/assets/restaurants/burger_king.png"
   },
   {
     "id": 12,
@@ -178,6 +178,6 @@
     },
     "open": false,
     "closing_time": "23:00",
-    "image": "/assets/stores/mcdonalds.jpg"
+    "image": "/assets/restaurants/mcdonalds.jpg"
   }
 ]

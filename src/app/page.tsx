@@ -1,74 +1,32 @@
-import Image from "next/image";
-import Link from "next/link";
-
-import { Header } from "~/components/Header";
-import { StoreCard } from "~/components/StoreCard";
-import { getStores } from "~/services/stores";
+import { HomePage } from "~/pages/Home";
+import { getRestaurants } from "~/services/restaurants";
 import { logger } from "~/utils/logger";
-import { createSlug } from "~/utils/slug";
 
-const fetchStores = async () => {
-  logger.info("Home.fetchStores - start");
+const fetchRestaurants = async () => {
+  logger.info("Home.fetchRestaurants - start");
   try {
-    const response = await getStores();
+    const response = await getRestaurants();
     const parsedResponse = response.reduce(
-      (acc, store) => {
-        if (store.open) {
-          acc.opened.push(store);
+      (acc, restaurant) => {
+        if (restaurant.open) {
+          acc.opened.push(restaurant);
         } else {
-          acc.closed.push(store);
+          acc.closed.push(restaurant);
         }
         return acc;
       },
-      { opened: [] as IStore[], closed: [] as IStore[] }
+      { opened: [] as IRestaurant[], closed: [] as IRestaurant[] }
     );
-    logger.info("Home.fetchStores - end");
+    logger.info("Home.fetchRestaurants - end");
     return parsedResponse;
   } catch (error) {
-    logger.error("Home.fetchStores - Exception:", error);
+    logger.error("Home.fetchRestaurants - Exception:", error);
     return { opened: [], closed: [] };
   }
 };
 
 export default async function Home() {
-  const stores = await fetchStores();
+  const restaurants = await fetchRestaurants();
 
-  return (
-    <>
-      <Header withSearch />
-      <main className="flex flex-col m-auto max-w-7xl">
-        <Image
-          alt="Rango barato no dia das crianças, peça com até 50% de desconto"
-          className="w-full max-h-[420px] object-cover"
-          height={420}
-          src="/assets/banner.png"
-          width={1260}
-        />
-
-        <section className="flex flex-col gap-4 p-4">
-          <p className="font-extrabold text-(--brand) text-xl">abertos</p>
-
-          {stores.opened.map((store) => (
-            <Link
-              key={store.id}
-              href="/loja/[name]"
-              as={`/loja/${createSlug(store.name)}?id=${store.id}`}
-            >
-              <StoreCard {...store} deliveryValue={store.delivery_info.fee} />
-            </Link>
-          ))}
-        </section>
-        <section className="flex flex-col gap-4 p-4">
-          <p className="font-extrabold text-(--brand) text-xl">fechados</p>
-          {stores.closed.map((store) => (
-            <StoreCard
-              {...store}
-              deliveryValue={store.delivery_info.fee}
-              key={store.id}
-            />
-          ))}
-        </section>
-      </main>
-    </>
-  );
+  return <HomePage restaurants={restaurants} />;
 }

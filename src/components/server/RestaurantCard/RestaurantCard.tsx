@@ -2,13 +2,13 @@ import React, { FC } from "react";
 
 import Image from "next/image";
 
-import { IStoreCardProps } from "./types";
 import { DeliveryBiker, DeliveryHelmet, Rating } from "~/assets/icons";
 import { formatCentsToBrl } from "~/utils/format";
 
-const Component: FC<IStoreCardProps> = (props) => {
-  const { deliveryValue, image, name, open, rating } = props;
+import { IRestaurantCardProps } from "./types";
 
+const Component: FC<IRestaurantCardProps> = (props) => {
+  const { deliveryValue, image, name, open, rating } = props;
   const deliveryIsFree = deliveryValue === 0;
   return (
     <div
@@ -59,4 +59,4 @@ const Component: FC<IStoreCardProps> = (props) => {
   );
 };
 
-export const StoreCard = React.memo(Component);
+export const RestaurantCard = React.memo(Component);

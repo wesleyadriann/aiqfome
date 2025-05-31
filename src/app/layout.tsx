@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 
-import { Footer } from "~/components/Footer";
+import { Footer } from "~/components/server/Footer";
+import { Header } from "~/components/server/Header";
+import { TicketStoreProvider } from "~/providers/ticketStoreProvider";
 
 import "./globals.css";
 
@@ -26,7 +28,10 @@ export default function RootLayout({
       <body
         className={`${nunitoSans.className} antialiased flex flex-col min-h-screen`}
       >
-        <section className="flex-1">{children}</section>
+        <Header />
+        <section className="flex-1">
+          <TicketStoreProvider>{children}</TicketStoreProvider>
+        </section>
         <Footer />
       </body>
     </html>

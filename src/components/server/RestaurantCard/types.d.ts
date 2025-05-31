@@ -1,4 +1,4 @@
-export type IStoreCardProps = {
+export type IRestaurantCardProps = {
   name: string;
   rating: number;
   deliveryValue: number;

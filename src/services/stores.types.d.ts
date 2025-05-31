@@ -1,4 +1,4 @@
-interface IStore {
+interface IRestaurant {
   id: number;
   name: string;
   delivery_info: {
@@ -14,6 +14,6 @@ interface IStore {
   image: string;
 }
 
-type IGetStoresResponse = IStore[];
+type IGetRestaurantsResponse = IRestaurant[];
 
-type IGetStoreById = IStore;
+type IGetRestaurantById = IRestaurant;

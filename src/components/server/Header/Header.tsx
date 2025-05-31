@@ -1,16 +1,13 @@
-import React, { FC } from "react";
+import React from "react";
 
 import Image from "next/image";
-import { Person, Pin, Search } from "~/assets/icons";
 import Link from "next/link";
 
-type IHeaderProps = {
-  withSearch?: boolean;
-};
+import { Person, Pin } from "~/assets/icons";
 
-const Component: FC<IHeaderProps> = ({ withSearch }) => {
+const Component = () => {
   return (
-    <header className="bg-(--brand) mb-[1px] p-4">
+    <header className="bg-(--brand) p-4">
       <div className="flex items-center m-auto max-w-7xl">
         <Link href="/">
           <Image
@@ -30,30 +27,6 @@ const Component: FC<IHeaderProps> = ({ withSearch }) => {
         </div>
         <Person className="cursor-pointer" height={24} width={24} />
       </div>
-      {withSearch && (
-        <div
-          className="
-          bg-white
-          border
-          border-(--dividers-gray)
-          flex
-
-          gap-2
-          items-center
-          m-auto
-          max-w-7xl
-          mt-4
-          p-2
-          rounded-lg
-          "
-        >
-          <Search height={24} width={24} />
-          <input
-            className="font-semibold focus:outline-none w-full"
-            placeholder="busque pela loja ou culinária"
-          />
-        </div>
-      )}
     </header>
   );
 };

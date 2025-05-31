@@ -15,13 +15,13 @@ interface IMenuItem {
   }[];
 }
 
-interface IStoreMenu {
+interface IRestaurantMenu {
   category: string;
   description?: string;
   items: IMenuItem[];
 }
 
-interface IGetMenuByStoreIdResponse {
+interface IGetMenuByRestaurantIdResponse {
   restaurantId: number;
-  menu: IStoreMenu[];
+  menu: IRestaurantMenu[];
 }
