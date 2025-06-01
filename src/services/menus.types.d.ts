@@ -1,4 +1,7 @@
+type IDishesKind = "main" | "side" | "drink" | "dessert";
+
 interface IMenuItem {
+  id: number;
   name: string;
   description?: string;
   price: number;
@@ -13,11 +16,18 @@ interface IMenuItem {
     price: number;
     promotional_price: number;
   }[];
+  options?: {
+    name: string;
+    min_selection?: number;
+    max_selection?: number;
+    options: string[];
+  }[];
 }
 
 interface IRestaurantMenu {
   category: string;
   description?: string;
+  kind: IDishesKind;
   items: IMenuItem[];
 }
 

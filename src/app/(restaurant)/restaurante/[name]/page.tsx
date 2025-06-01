@@ -16,7 +16,7 @@ const fetchRestaurant = async (id: number) => {
     logger.info("Restaurant.fetchRestaurant - end");
     return {
       info: restaurantResponse,
-      menu: menuResponse,
+      menu: menuResponse.menu,
     };
   } catch (error) {
     logger.error("Restaurant.fetchRestaurant - Exception:", error);
@@ -26,7 +26,7 @@ const fetchRestaurant = async (id: number) => {
 };
 
 export default async function Restaurant({ searchParams }) {
-  const restaurantId = await searchParams?.id;
+  const { id: restaurantId } = await searchParams;
   const restaurant = await fetchRestaurant(Number(restaurantId));
 
   return <RestaurantPage {...restaurant} />;

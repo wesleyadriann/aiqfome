@@ -1,4 +1,4 @@
 export type IRestaurantProps = {
   info: IRestaurant;
-  menu: IGetMenuByRestaurantIdResponse;
+  menu: IGetMenuByRestaurantIdResponse["menu"];
 };

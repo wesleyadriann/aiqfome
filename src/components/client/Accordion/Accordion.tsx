@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useCallback, useRef, useState } from "react";
 
 import { ChevronRight } from "~/assets/icons";
@@ -14,7 +14,7 @@ const Component: React.FC<IAccordionProps> = ({
   title,
   description,
   items,
-  itemsType = "menu",
+  itemsKind = "main",
 }) => {
   const setCurrentMenuItem = useTicketStore(
     (state) => state.setCurrentMenuItem
@@ -23,6 +23,7 @@ const Component: React.FC<IAccordionProps> = ({
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -32,10 +33,11 @@ const Component: React.FC<IAccordionProps> = ({
 
   const handlerPressItem = useCallback(
     (item: IMenuItem) => {
-      setCurrentMenuItem?.(item, itemsType);
-      router.push(`/produto/${createSlug(item.name)}`);
+      setCurrentMenuItem?.(item, itemsKind);
+      const id = searchParams.get("id");
+      router.push(`/produto/${createSlug(item.name)}?id=${id}`);
     },
-    [itemsType, router, setCurrentMenuItem]
+    [itemsKind, router, searchParams, setCurrentMenuItem]
   );
 
   return (

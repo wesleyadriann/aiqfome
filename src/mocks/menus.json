@@ -4,8 +4,10 @@
     "menu": [
       {
         "category": "Niguiris",
+        "kind": "main",
         "items": [
           {
+            "id": 1,
             "name": "Salmão",
             "description": "salmão fresco com arroz",
             "price": 1342,
@@ -15,11 +17,13 @@
             }
           },
           {
+            "id": 2,
             "name": "Atum",
             "description": "atum fresco com arroz",
             "price": 1789
           },
           {
+            "id": 3,
             "name": "Shimeji",
             "description": "cogumelos shimeji com arroz",
             "price": 1123
@@ -27,8 +31,8 @@
         ]
       },
       {
-        "id": 2,
         "category": "Ceviches",
+        "kind": "main",
         "description": "um prato super refrescante de peixe fatiado e o marinado",
         "items": [
           {
@@ -42,37 +46,23 @@
                 "min_selection": 1,
                 "max_selection": 2,
                 "options": [
-                  {
-                    "name": "shoyu",
-                    "required": true,
-                    "max_selection": 2
-                  },
-                  {
-                    "name": "gengibre",
-                    "required": true,
-                    "max_selection": 2
-                  },
-                  {
-                    "name": "wasabi",
-                    "required": true,
-                    "max_selection": 2
-                  },
-                  {
-                    "name": "sem acompanhamentos",
-                    "required": true,
-                    "max_selection": 2
-                  }
+                  "shoyu",
+                  "gengibre",
+                  "wasabi",
+                  "sem acompanhamentos"
                 ]
               }
             ]
           },
           {
             "name": "Ceviche de Atum",
+            "kind": "main",
             "description": "atum fresco marinado com limão, cebola roxa e coentro",
             "price": 1877
           },
           {
             "name": "Ceviche Misto",
+            "kind": "main",
             "description": "salmão e atum marinados com limão, cebola roxa e coentro",
             "price": 1999,
             "variants": [
@@ -93,6 +83,7 @@
       },
       {
         "category": "Temakis",
+        "kind": "main",
         "description": "sushi em forma de cone com salmão e cream cheese",
         "items": [
           {
@@ -110,14 +101,6 @@
             "price": 1678
           },
           {
-            "name": "Mix",
-            "description": "escolha 3 ingredientes: shimeji, alface americana, rúcula, pepino, tomate seco, cream cheese, maçã,",
-            "price": 1234,
-            "note": {
-              "spicy": true
-            }
-          },
-          {
             "name": "Salmão picante",
             "description": "alga, arroz, salmão fresco, pimenta e cebolinha",
             "price": 1567,
@@ -129,6 +112,7 @@
       },
       {
         "category": "Bebidas",
+        "kind": "drink",
         "items": [
           {
             "name": "Coca-Cola",
@@ -151,6 +135,24 @@
             "price": 300
           }
         ]
+      },
+      {
+        "category": "Acompanhamentos",
+        "kind": "side",
+        "items": [
+          {
+            "name": "biscoito da sorte",
+            "price": 490
+          },
+          {
+            "name": "guioza",
+            "price": 590
+          },
+          {
+            "name": "salada de algas",
+            "price": 690
+          }
+        ]
       }
     ]
   },
@@ -159,6 +161,7 @@
     "menu": [
       {
         "category": "Sanduíches",
+        "kind": "main",
         "description": "Monte seu sanduíche do seu jeito",
         "items": [
           {
@@ -210,6 +213,7 @@
       },
       {
         "category": "Acompanhamentos",
+        "kind": "side",
         "items": [
           {
             "name": "Cookie",
@@ -225,6 +229,7 @@
       },
       {
         "category": "Bebidas",
+        "kind": "drink",
         "items": [
           {
             "name": "Refrigerante 500ml",
@@ -250,6 +255,7 @@
     "menu": [
       {
         "category": "Sanduíches",
+        "kind": "main",
         "items": [
           {
             "name": "Whopper",
@@ -270,6 +276,7 @@
       },
       {
         "category": "Acompanhamentos",
+        "kind": "side",
         "items": [
           {
             "name": "Batata Frita Média",
@@ -286,6 +293,7 @@
 
       {
         "category": "Sobremesas",
+        "kind": "dessert",
         "items": [
           {
             "name": "Sundae",
@@ -306,6 +314,7 @@
       },
       {
         "category": "Bebidas",
+        "kind": "drink",
         "items": [
           {
             "name": "Refrigerante 500ml",
@@ -331,6 +340,7 @@
     "menu": [
       {
         "category": "Sanduíches",
+        "kind": "main",
         "items": [
           {
             "name": "Big Mac",
@@ -351,6 +361,7 @@
       },
       {
         "category": "Acompanhamentos",
+        "kind": "side",
         "items": [
           {
             "name": "Batata Frita Média",
@@ -366,6 +377,7 @@
       },
       {
         "category": "Sobremesas",
+        "kind": "dessert",
         "items": [
           {
             "name": "McFlurry",
@@ -381,6 +393,7 @@
       },
       {
         "category": "Bebidas",
+        "kind": "drink",
         "items": [
           {
             "name": "Refrigerante 500ml",
