@@ -12,6 +12,7 @@
             "description": "salmão fresco com arroz",
             "price": 1342,
             "promotional_price": 287,
+            "image": "/assets/menus/niguiri-salmao.jpg",
             "note": {
               "spicy": true
             }
@@ -20,12 +21,14 @@
             "id": 2,
             "name": "Atum",
             "description": "atum fresco com arroz",
+            "image": "/assets/menus/niguiri-atum.jpg",
             "price": 1789
           },
           {
             "id": 3,
-            "name": "Shimeji",
-            "description": "cogumelos shimeji com arroz",
+            "name": "Shitake",
+            "image": "/assets/menus/niguiri-shitake.jpg",
+            "description": "cogumelos shitake com arroz",
             "price": 1123
           }
         ]
@@ -40,6 +43,7 @@
             "description": "salmão fresco marinado com limão, cebola roxa e coentro",
             "price": 2103,
             "promotional_price": 399,
+            "image": "/assets/menus/ceviche-salmao.jpg",
             "options": [
               {
                 "name": "acompanhamentos",
@@ -57,11 +61,13 @@
           {
             "name": "Ceviche de Atum",
             "kind": "main",
+            "image": "/assets/menus/ceviche-atum.jpg",
             "description": "atum fresco marinado com limão, cebola roxa e coentro",
             "price": 1877
           },
           {
             "name": "Ceviche Misto",
+            "image": "/assets/menus/ceviche-misto.jpg",
             "kind": "main",
             "description": "salmão e atum marinados com limão, cebola roxa e coentro",
             "price": 1999,
@@ -89,6 +95,7 @@
           {
             "name": "Califórnia",
             "description": "kani, pepino e maçã ou manga",
+            "image": "/assets/menus/temaki-california.jpg",
             "price": 1456,
             "promotional_price": 312,
             "note": {
@@ -97,11 +104,13 @@
           },
           {
             "name": "Filadélfia",
+            "image": "/assets/menus/temaki-filadelfia.jpg",
             "description": "arroz, salmão fresco, cream cheese e cebolinha",
             "price": 1678
           },
           {
             "name": "Salmão picante",
+            "image": "/assets/menus/temaki-salmao-picante.jpg",
             "description": "alga, arroz, salmão fresco, pimenta e cebolinha",
             "price": 1567,
             "note": {
@@ -116,21 +125,25 @@
         "items": [
           {
             "name": "Coca-Cola",
+            "image": "/assets/menus/coca-cola.jpg",
             "description": "350ml",
             "price": 500
           },
           {
             "name": "Chá Gelado",
+            "image": "/assets/menus/cha-gelado.jpg",
             "description": "Chá gelado de pêssego ou limão",
             "price": 600
           },
           {
             "name": "Suco de Laranja",
+            "image": "/assets/menus/suco-laranja.jpg",
             "description": "Suco natural de laranja",
             "price": 700
           },
           {
             "name": "Água Mineral",
+            "image": "/assets/menus/agua-mineral.jpg",
             "description": "500ml",
             "price": 300
           }
@@ -142,14 +155,17 @@
         "items": [
           {
             "name": "biscoito da sorte",
+            "image": "/assets/menus/biscoito-sorte.jpg",
             "price": 490
           },
           {
             "name": "guioza",
+            "image": "/assets/menus/guioza.jpg",
             "price": 590
           },
           {
             "name": "salada de algas",
+            "image": "/assets/menus/salada-algas.jpg",
             "price": 690
           }
         ]
@@ -167,6 +183,7 @@
           {
             "name": "Sub de Frango",
             "description": "Peito de frango grelhado, vegetais frescos e pão à sua escolha",
+            "image": "/assets/menus/subway-frango.jpg",
             "price": 1890,
             "variants": [
               {
@@ -182,6 +199,7 @@
           {
             "name": "Sub de Carne",
             "description": "Carne bovina temperada, vegetais frescos e pão à sua escolha",
+            "image": "/assets/menus/ subway-carne.jpg",
             "price": 1990,
             "variants": [
               {
@@ -198,6 +216,10 @@
             "name": "Sub Veggie",
             "description": "Vegetais frescos, queijo e pão à sua escolha",
             "price": 1690,
+            "note": {
+              "vegan": true
+            },
+            "image": "/assets/menus/subway-veggie.jpg",
             "variants": [
               {
                 "name": "15cm",
@@ -217,11 +239,13 @@
         "items": [
           {
             "name": "Cookie",
+            "image": "/assets/menus/cookie.jpg",
             "description": "Cookie de chocolate ou baunilha",
             "price": 490
           },
           {
             "name": "Chips",
+            "image": "/assets/menus/chips.jpg",
             "description": "Batata chips crocante",
             "price": 590
           }
@@ -233,16 +257,19 @@
         "items": [
           {
             "name": "Refrigerante 500ml",
+            "image": "/assets/menus/coca-cola.jpg",
             "description": "Coca-Cola, Guaraná ou Fanta",
             "price": 850
           },
           {
             "name": "Suco Natural",
+            "image": "/assets/menus/suco-laranja.jpg",
             "description": "Suco natural de laranja ou uva",
             "price": 950
           },
           {
             "name": "Água Mineral",
+            "image": "/assets/menus/agua-mineral.jpg",
             "description": "500ml",
             "price": 300
           }
@@ -259,16 +286,20 @@
         "items": [
           {
             "name": "Whopper",
+            "image": "/assets/menus/whopper.jpg",
             "description": "Carne bovina grelhada, alface, tomate, maionese, ketchup, picles e cebola no pão com gergelim",
             "price": 2190
           },
           {
             "name": "Cheeseburger Duplo",
+            "image": "/assets/menus/cheeseburguer-duplo.jpg",
             "description": "Dois hambúrgueres, queijo, ketchup, mostarda, cebola e picles",
             "price": 1790
           },
           {
             "name": "Chicken Sandwich",
+
+            "image": "/assets/menus/chicken-sandwich.jpg",
             "description": "Filé de frango empanado, alface e maionese no pão",
             "price": 1690
           }
@@ -280,11 +311,13 @@
         "items": [
           {
             "name": "Batata Frita Média",
+            "image": "/assets/menus/bk-batata-frita.jpg",
             "description": "Batatas fritas crocantes",
             "price": 990
           },
           {
             "name": "Onion Rings",
+            "image": "/assets/menus/ onion-rings.jpg",
             "description": "Anéis de cebola empanados",
             "price": 1190
           }
@@ -297,16 +330,13 @@
         "items": [
           {
             "name": "Sundae",
+            "image": "/assets/menus/bk-sundae.jpg",
             "description": "Sorvete de baunilha com cobertura de chocolate ou morango",
             "price": 1000
           },
           {
-            "name": "Torta de Maçã",
-            "description": "Torta de maçã quente",
-            "price": 900
-          },
-          {
             "name": "Milkshake",
+            "image": "/assets/menus/bk-milkshake.jpg",
             "description": "Milkshake de chocolate, morango ou baunilha",
             "price": 1200
           }
@@ -319,16 +349,19 @@
           {
             "name": "Refrigerante 500ml",
             "description": "Coca-Cola, Guaraná ou Fanta",
+             "image": "/assets/menus/coca-cola.jpg",
             "price": 850
           },
           {
             "name": "Suco de Laranja",
             "description": "Suco natural de laranja",
+            "image": "/assets/menus/suco-laranja.jpg",
             "price": 950
           },
           {
             "name": "Água Mineral",
             "description": "500ml",
+             "image": "/assets/menus/agua-mineral.jpg",
             "price": 300
           }
         ]
@@ -345,15 +378,18 @@
           {
             "name": "Big Mac",
             "description": "Dois hambúrgueres, alface, queijo, molho especial, cebola e picles no pão com gergelim",
-            "price": 2090
+            "price": 2090,
+            "image": "/assets/menus/big-mac.jpg"
           },
           {
             "name": "Cheeseburger",
+            "image": "/assets/menus/mc-cheeseburger.jpg",
             "description": "Hambúrguer, queijo, ketchup, mostarda, cebola e picles no pão",
             "price": 1190
           },
           {
             "name": "Quarterão com Queijo",
+            "image": "/assets/menus/quarterao-com-queijo.jpg",
             "description": "Hambúrguer de carne bovina, queijo, ketchup, mostarda, cebola e picles no pão",
             "price": 1890
           }
@@ -365,11 +401,13 @@
         "items": [
           {
             "name": "Batata Frita Média",
+            "image": "/assets/menus/mc-batat-frita.jpg",
             "description": "Batatas fritas crocantes",
             "price": 990
           },
           {
             "name": "McNuggets 10 unidades",
+            "image": "/assets/menus/mcnuggets.jpg",
             "description": "10 pedaços de frango empanado",
             "price": 1690
           }
@@ -381,11 +419,13 @@
         "items": [
           {
             "name": "McFlurry",
+            "image": "/assets/menus/mcflurry.jpg",
             "description": "Sorvete de baunilha com cobertura e pedaços de chocolate",
             "price": 1300
           },
           {
             "name": "Sundae",
+            "image": "/assets/menus/mc-sundae.jpg",
             "description": "Sorvete de baunilha com cobertura de chocolate ou morango",
             "price": 1000
           }
@@ -397,11 +437,13 @@
         "items": [
           {
             "name": "Refrigerante 500ml",
+            "image": "/assets/menus/coca-cola.jpg",
             "description": "Coca-Cola, Guaraná ou Fanta",
             "price": 850
           },
           {
             "name": "Suco de Laranja",
+            "image": "/assets/menus/suco-laranja.jpg",
             "description": "Suco natural de laranja",
             "price": 950
           }

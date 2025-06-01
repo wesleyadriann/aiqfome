@@ -2,6 +2,7 @@
 import React, { useCallback, useMemo } from "react";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 import { useTicketStore } from "~/providers/ticketStoreProvider";
 import { formatCentsToBrl } from "~/utils/format";
@@ -102,6 +103,14 @@ const Component: React.FC<IProductPageProps> = ({ restaurantMenu }) => {
 
   return (
     <main className="flex flex-col m-auto max-w-7xl">
+      <Image
+        alt={currentMenuItem?.name}
+        src={currentMenuItem.image}
+        height={200}
+        width={390}
+        className="w-full max-h-[280px] object-cover"
+      />
+
       <section className="p-4">
         <p className="font-bold text-xl">{currentMenuItem?.name}</p>
         <div className="flex font-extrabold gap-1.5 items-center">

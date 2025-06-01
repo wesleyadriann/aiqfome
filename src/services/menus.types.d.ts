@@ -4,6 +4,7 @@ interface IMenuItem {
   id: number;
   name: string;
   description?: string;
+  image: string;
   price: number;
   promotional_price?: number;
   note?: {
