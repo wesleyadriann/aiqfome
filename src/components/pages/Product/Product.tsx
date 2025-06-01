@@ -1,26 +1,32 @@
 "use client";
 import React, { useCallback, useMemo } from "react";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { useTicketStore } from "~/providers/ticketStoreProvider";
 import { formatCentsToBrl } from "~/utils/format";
 
 import { SectionTitle } from "./SectionTitle";
-import { IItemsAdded, IProductPageProps } from "./types";
+import { IProductPageProps, ISelectedItems } from "./types";
 
 const Component: React.FC<IProductPageProps> = ({ restaurantMenu }) => {
-  const [itemsAdded, setItemsAdded] = React.useState<IItemsAdded[]>([]);
-  const [, setAnnotation] = React.useState<string>("");
-  const [isAdded, setIsAdded] = React.useState<boolean>(false);
-
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const currentMenuItem = useTicketStore((state) => state.currentMenuItem);
   const currentMenuItemKind = useTicketStore(
     (state) => state.currentMenuItemKind
   );
   const setTicket = useTicketStore((state) => state.setTicket);
+
+  const [itemsAdded, setItemsAdded] = React.useState<ISelectedItems>({
+    total: currentMenuItem?.variants?.length ? 0 : currentMenuItem?.price ?? 0,
+    option: [],
+    drink: [],
+    side: [],
+  });
+  const [annotation, setAnnotation] = React.useState<string>("");
+  const [isAdded, setIsAdded] = React.useState<boolean>(false);
 
   const restaurantDrinks = useMemo(() => {
     if (currentMenuItemKind !== "main") return [];
@@ -35,16 +41,39 @@ const Component: React.FC<IProductPageProps> = ({ restaurantMenu }) => {
   const handlerClickItem = useCallback(
     (kind: string, name: string, value?: number) => {
       setItemsAdded((prev) => {
-        const alreadyExists = prev.some(
+        const prevState = { ...prev };
+
+        if (kind === "variant") {
+          const total = prevState.variant?.name
+            ? prevState.total - (prevState.variant.value ?? 0)
+            : prevState.total;
+
+          return {
+            ...prevState,
+            total: total + (value ?? 0),
+            variant: { kind, name, value },
+          };
+        }
+
+        const alreadyExists = prev[kind].some(
           (item) => item.kind === kind && item.name === name
         );
         if (alreadyExists) {
-          return prev.filter(
+          const kindItems = prev[kind].filter(
             (item) => !(item.kind === kind && item.name === name)
           );
+          return {
+            ...prevState,
+            total: prevState.total - (value ?? 0),
+            [kind]: kindItems,
+          };
         }
 
-        return prev.concat([{ kind, name, value }]);
+        return {
+          ...prevState,
+          total: prevState.total + (value ?? 0),
+          [kind]: prev[kind].concat([{ kind, name, value }]),
+        };
       });
     },
     []
@@ -58,13 +87,14 @@ const Component: React.FC<IProductPageProps> = ({ restaurantMenu }) => {
   );
 
   const handlerClickAdd = useCallback(() => {
-    setTicket?.(itemsAdded);
+    setTicket?.(itemsAdded, annotation);
     setIsAdded(true);
-  }, [itemsAdded, setTicket]);
+  }, [annotation, itemsAdded, setTicket]);
 
   const handlerRedirectToTicket = useCallback(() => {
-    router.push("/pedido");
-  }, [router]);
+    const id = searchParams.get("id");
+    router.push(`/pedido?id=${id}`);
+  }, [router, searchParams]);
 
   if (!currentMenuItem) {
     return null;
@@ -109,7 +139,7 @@ const Component: React.FC<IProductPageProps> = ({ restaurantMenu }) => {
               py-3
               rounded-md
               "
-            disabled={!itemsAdded.length}
+            disabled={itemsAdded.total < 1}
             onClick={handlerClickAdd}
           >
             adicionar
@@ -197,7 +227,7 @@ const Component: React.FC<IProductPageProps> = ({ restaurantMenu }) => {
                     name={option.name}
                     onChange={(event) => {
                       event.stopPropagation();
-                      handlerClickItem(option.name, item);
+                      handlerClickItem("option", item);
                     }}
                     type="checkbox"
                     value={item}

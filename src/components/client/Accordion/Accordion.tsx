@@ -33,11 +33,11 @@ const Component: React.FC<IAccordionProps> = ({
 
   const handlerPressItem = useCallback(
     (item: IMenuItem) => {
-      setCurrentMenuItem?.(item, itemsKind);
+      setCurrentMenuItem?.(item, itemsKind, title);
       const id = searchParams.get("id");
       router.push(`/produto/${createSlug(item.name)}?id=${id}`);
     },
-    [itemsKind, router, searchParams, setCurrentMenuItem]
+    [itemsKind, router, searchParams, setCurrentMenuItem, title]
   );
 
   return (
