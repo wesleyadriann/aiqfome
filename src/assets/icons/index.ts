@@ -8,3 +8,5 @@ export { default as Pin } from "./Pin";
 export { default as Rating } from "./Rating";
 export { default as Search } from "./Search";
 export { default as Share } from "./Share";
+export { default as Spicy } from "./Spicy";
+export { default as Vegan } from "./Vegan";

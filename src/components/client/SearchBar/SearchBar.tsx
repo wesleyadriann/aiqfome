@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 import { Search } from "~/assets/icons";
@@ -11,7 +9,7 @@ const Component = () => {
         className="
           bg-white
           border
-          border-(--dividers-gray)
+          border-(--dividers)
           flex
           gap-2
           items-center

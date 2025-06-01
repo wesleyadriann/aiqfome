@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import React, { useCallback, useRef, useState } from "react";
 
 import { ChevronRight } from "~/assets/icons";
+import { useTicketStore } from "~/providers/ticketStoreProvider";
 import { createSlug } from "~/utils/slug";
 
 import { AccordionItem } from "./AccordionItem";
@@ -13,7 +14,12 @@ const Component: React.FC<IAccordionProps> = ({
   title,
   description,
   items,
+  itemsType = "menu",
 }) => {
+  const setCurrentMenuItem = useTicketStore(
+    (state) => state.setCurrentMenuItem
+  );
+
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
@@ -26,10 +32,10 @@ const Component: React.FC<IAccordionProps> = ({
 
   const handlerPressItem = useCallback(
     (item: IMenuItem) => {
-      window.localStorage.setItem("selectedProduct", JSON.stringify(item));
+      setCurrentMenuItem?.(item, itemsType);
       router.push(`/produto/${createSlug(item.name)}`);
     },
-    [router]
+    [itemsType, router, setCurrentMenuItem]
   );
 
   return (

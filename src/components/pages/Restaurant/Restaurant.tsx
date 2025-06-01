@@ -103,16 +103,18 @@ const Component: React.FC<IRestaurantProps> = ({ info, menu }) => {
         </div>
       </section>
 
-      <section className="bg-(--neutrals-100) flex flex-col gap-1">
-        {menu.map((item) => (
-          <Accordion
-            description={item.description}
-            items={item.items}
-            key={item.category}
-            title={item.category}
-          />
-        ))}
-      </section>
+      <div className="bg-(--neutrals-100) flex flex-col gap-1">
+        <section className=" flex flex-col gap-1">
+          {menu.menu.map((item) => (
+            <Accordion
+              description={item.description}
+              items={item.items}
+              key={item.category}
+              title={item.category}
+            />
+          ))}
+        </section>
+      </div>
     </main>
   );
 };

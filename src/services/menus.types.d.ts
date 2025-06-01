@@ -7,7 +7,7 @@ interface IMenuItem {
     spicy?: boolean;
     vegan?: boolean;
   };
-  variants: {
+  variants?: {
     name: string;
     value: number;
     price: number;
@@ -20,6 +20,8 @@ interface IRestaurantMenu {
   description?: string;
   items: IMenuItem[];
 }
+
+type IDrinkItem = Pick<IMenuItem, "name" | "description" | "price">;
 
 interface IGetMenuByRestaurantIdResponse {
   restaurantId: number;

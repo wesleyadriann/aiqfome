@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --dividers-gray: #CDD1D9;
-
   --neutrals-50: #F5F6F9;
   --neutrals-100: #EEF0F5;
+  --neutrals-200: #CDD1D9;
   --neutrals-500: #6D6F73;
   --neutrals-700: #393A3C;
   --neutrals-900: #202326;
@@ -25,6 +24,8 @@
 
   --brand: var(--purple-500);
   --success: var(--green-500);
+
+    --dividers: var(--neutrals-200);
 
 }
 

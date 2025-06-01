@@ -1,4 +1,4 @@
-import { HomePage } from "~/pages/Home";
+import { HomePage } from "~/components/pages/Home";
 import { getRestaurants } from "~/services/restaurants";
 import { logger } from "~/utils/logger";
 

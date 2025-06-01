@@ -50,7 +50,7 @@ const Component: FC<IRestaurantCardProps> = (props) => {
             </>
           )}
 
-          <span className="text-xs text-(--dividers-gray)">•</span>
+          <span className="text-xs text-(--dividers)">•</span>
           <Rating height={24} width={24} />
           <span className="text-(--text-secondary)">{rating.toFixed(1)}</span>
         </div>

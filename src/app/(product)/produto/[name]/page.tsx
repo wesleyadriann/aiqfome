@@ -1,3 +1,5 @@
-export default function Product({}: { params: { name: string } }) {
-  return <>{/* <div>{JSON.stringify(state)}</div> */}</>;
+import { ProductPage } from "~/components/pages/Product";
+
+export default function Product() {
+  return <ProductPage />;
 }

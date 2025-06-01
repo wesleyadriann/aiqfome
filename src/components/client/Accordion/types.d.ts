@@ -2,6 +2,7 @@ export type IAccordionProps = {
   title: string;
   description?: string;
   items: IMenuItem[];
+  itemsType?: string;
 };
 
 export type IAccordionItemProps = {

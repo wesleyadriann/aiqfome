@@ -25,7 +25,7 @@ const Component: React.FC<IHomeProps> = ({ restaurants }) => {
         <section className="flex flex-col gap-4 p-4">
           <p className="font-extrabold text-(--brand) text-xl">abertos</p>
 
-          {restaurants.opened.map((restaurant) => (
+          {restaurants?.opened.map((restaurant) => (
             <Link
               key={restaurant.id}
               href="/restaurante/[name]"
@@ -42,7 +42,7 @@ const Component: React.FC<IHomeProps> = ({ restaurants }) => {
         </section>
         <section className="flex flex-col gap-4 p-4">
           <p className="font-extrabold text-(--brand) text-xl">fechados</p>
-          {restaurants.closed.map((restaurant) => (
+          {restaurants?.closed.map((restaurant) => (
             <RestaurantCard
               {...restaurant}
               deliveryValue={restaurant.delivery_info.fee}
@@ -54,4 +54,5 @@ const Component: React.FC<IHomeProps> = ({ restaurants }) => {
     </>
   );
 };
+
 export const HomePage = React.memo(Component);
